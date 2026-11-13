@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glassmorphism Profile Card</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+      overflow: hidden;
+    }
+
+    /* Ambient background blobs */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      z-index: 0;
+    }
+
+    .blob-1 {
+      width: 250px;
+      height: 250px;
+      background: #e94560;
+      top: 20%;
+      left: 30%;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .blob-2 {
+      width: 300px;
+      height: 300px;
+      background: #4361ee;
+      bottom: 15%;
+      right: 28%;
+      animation: float 8s ease-in-out infinite reverse;
+    }
+
+    /* Glass Card */
+    .card {
+      position: relative;
+      z-index: 1;
+      width: 320px;
+      padding: 2.5rem 2rem;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      color: #ffffff;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .avatar {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 1.2rem;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #e94560, #4361ee);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      font-weight: bold;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.3rem;
+      letter-spacing: 0.5px;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 1.8rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      background: #e94560;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #ff5773;
+      box-shadow: 0 0 20px rgba(233, 69, 96, 0.6);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <div class="card">
+    <div class="avatar">JD</div>
+    <h2>Jane Doe</h2>
+    <p>Creative Frontend Developer</p>
+    <a href="#" class="btn">Connect</a>
+  </div>
+
+</body>
+</html>
